@@ -99,6 +99,9 @@ reg = fit_model(X_train, y_train)
 # Produce the value for 'max_depth'
 print("Parameter 'max_depth' is {} for the optimal model.".format(reg.get_params()['max_depth']))
 
+y_predict = reg.predict(X_test)
+from sklearn.metrics import classification_report
+print(classification_report(y_test,y_predict))
 # Produce a matrix for client data
 client_data = [[5, 17, 15], # Client 1
                [4, 32, 22], # Client 2
